@@ -1,0 +1,1 @@
+# bearshop.api.thrift
