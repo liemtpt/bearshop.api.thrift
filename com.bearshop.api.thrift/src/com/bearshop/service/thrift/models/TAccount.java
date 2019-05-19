@@ -51,8 +51,10 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
   private static final org.apache.thrift.protocol.TField PAGE_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("pageId", org.apache.thrift.protocol.TType.STRING, (short)14);
   private static final org.apache.thrift.protocol.TField PERMISSION_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("permissionId", org.apache.thrift.protocol.TType.STRING, (short)15);
   private static final org.apache.thrift.protocol.TField EXPIRE_TIME_FIELD_DESC = new org.apache.thrift.protocol.TField("expireTime", org.apache.thrift.protocol.TType.STRING, (short)16);
-  private static final org.apache.thrift.protocol.TField DATE_CREATED_FIELD_DESC = new org.apache.thrift.protocol.TField("dateCreated", org.apache.thrift.protocol.TType.STRING, (short)17);
-  private static final org.apache.thrift.protocol.TField DATE_MODIFIED_FIELD_DESC = new org.apache.thrift.protocol.TField("dateModified", org.apache.thrift.protocol.TType.STRING, (short)18);
+  private static final org.apache.thrift.protocol.TField CREATED_AT_FIELD_DESC = new org.apache.thrift.protocol.TField("createdAt", org.apache.thrift.protocol.TType.STRING, (short)17);
+  private static final org.apache.thrift.protocol.TField MODIFIED_AT_FIELD_DESC = new org.apache.thrift.protocol.TField("modifiedAt", org.apache.thrift.protocol.TType.STRING, (short)18);
+  private static final org.apache.thrift.protocol.TField USER_CREATED_FIELD_DESC = new org.apache.thrift.protocol.TField("userCreated", org.apache.thrift.protocol.TType.I32, (short)19);
+  private static final org.apache.thrift.protocol.TField USER_MODIFIED_FIELD_DESC = new org.apache.thrift.protocol.TField("userModified", org.apache.thrift.protocol.TType.I32, (short)20);
 
   private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
   static {
@@ -76,8 +78,10 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
   public String pageId; // required
   public String permissionId; // required
   public String expireTime; // required
-  public String dateCreated; // required
-  public String dateModified; // required
+  public String createdAt; // required
+  public String modifiedAt; // required
+  public int userCreated; // required
+  public int userModified; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -97,8 +101,10 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
     PAGE_ID((short)14, "pageId"),
     PERMISSION_ID((short)15, "permissionId"),
     EXPIRE_TIME((short)16, "expireTime"),
-    DATE_CREATED((short)17, "dateCreated"),
-    DATE_MODIFIED((short)18, "dateModified");
+    CREATED_AT((short)17, "createdAt"),
+    MODIFIED_AT((short)18, "modifiedAt"),
+    USER_CREATED((short)19, "userCreated"),
+    USER_MODIFIED((short)20, "userModified");
 
     private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
 
@@ -145,10 +151,14 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
           return PERMISSION_ID;
         case 16: // EXPIRE_TIME
           return EXPIRE_TIME;
-        case 17: // DATE_CREATED
-          return DATE_CREATED;
-        case 18: // DATE_MODIFIED
-          return DATE_MODIFIED;
+        case 17: // CREATED_AT
+          return CREATED_AT;
+        case 18: // MODIFIED_AT
+          return MODIFIED_AT;
+        case 19: // USER_CREATED
+          return USER_CREATED;
+        case 20: // USER_MODIFIED
+          return USER_MODIFIED;
         default:
           return null;
       }
@@ -193,6 +203,8 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
   private static final int __TYPE_ISSET_ID = 1;
   private static final int __SETTING_ISSET_ID = 2;
   private static final int __STATUS_ISSET_ID = 3;
+  private static final int __USERCREATED_ISSET_ID = 4;
+  private static final int __USERMODIFIED_ISSET_ID = 5;
   private byte __isset_bitfield = 0;
   public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
@@ -229,10 +241,14 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     tmpMap.put(_Fields.EXPIRE_TIME, new org.apache.thrift.meta_data.FieldMetaData("expireTime", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.DATE_CREATED, new org.apache.thrift.meta_data.FieldMetaData("dateCreated", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.CREATED_AT, new org.apache.thrift.meta_data.FieldMetaData("createdAt", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.DATE_MODIFIED, new org.apache.thrift.meta_data.FieldMetaData("dateModified", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.MODIFIED_AT, new org.apache.thrift.meta_data.FieldMetaData("modifiedAt", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+    tmpMap.put(_Fields.USER_CREATED, new org.apache.thrift.meta_data.FieldMetaData("userCreated", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+    tmpMap.put(_Fields.USER_MODIFIED, new org.apache.thrift.meta_data.FieldMetaData("userModified", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
     org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(TAccount.class, metaDataMap);
   }
@@ -257,8 +273,10 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
     String pageId,
     String permissionId,
     String expireTime,
-    String dateCreated,
-    String dateModified)
+    String createdAt,
+    String modifiedAt,
+    int userCreated,
+    int userModified)
   {
     this();
     this.id = id;
@@ -281,8 +299,12 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
     this.pageId = pageId;
     this.permissionId = permissionId;
     this.expireTime = expireTime;
-    this.dateCreated = dateCreated;
-    this.dateModified = dateModified;
+    this.createdAt = createdAt;
+    this.modifiedAt = modifiedAt;
+    this.userCreated = userCreated;
+    setUserCreatedIsSet(true);
+    this.userModified = userModified;
+    setUserModifiedIsSet(true);
   }
 
   /**
@@ -330,12 +352,14 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
     if (other.isSetExpireTime()) {
       this.expireTime = other.expireTime;
     }
-    if (other.isSetDateCreated()) {
-      this.dateCreated = other.dateCreated;
+    if (other.isSetCreatedAt()) {
+      this.createdAt = other.createdAt;
     }
-    if (other.isSetDateModified()) {
-      this.dateModified = other.dateModified;
+    if (other.isSetModifiedAt()) {
+      this.modifiedAt = other.modifiedAt;
     }
+    this.userCreated = other.userCreated;
+    this.userModified = other.userModified;
   }
 
   public TAccount deepCopy() {
@@ -364,8 +388,12 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
     this.pageId = null;
     this.permissionId = null;
     this.expireTime = null;
-    this.dateCreated = null;
-    this.dateModified = null;
+    this.createdAt = null;
+    this.modifiedAt = null;
+    setUserCreatedIsSet(false);
+    this.userCreated = 0;
+    setUserModifiedIsSet(false);
+    this.userModified = 0;
   }
 
   public int getId() {
@@ -748,52 +776,98 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
     }
   }
 
-  public String getDateCreated() {
-    return this.dateCreated;
+  public String getCreatedAt() {
+    return this.createdAt;
   }
 
-  public TAccount setDateCreated(String dateCreated) {
-    this.dateCreated = dateCreated;
+  public TAccount setCreatedAt(String createdAt) {
+    this.createdAt = createdAt;
     return this;
   }
 
-  public void unsetDateCreated() {
-    this.dateCreated = null;
+  public void unsetCreatedAt() {
+    this.createdAt = null;
   }
 
-  /** Returns true if field dateCreated is set (has been assigned a value) and false otherwise */
-  public boolean isSetDateCreated() {
-    return this.dateCreated != null;
+  /** Returns true if field createdAt is set (has been assigned a value) and false otherwise */
+  public boolean isSetCreatedAt() {
+    return this.createdAt != null;
   }
 
-  public void setDateCreatedIsSet(boolean value) {
+  public void setCreatedAtIsSet(boolean value) {
     if (!value) {
-      this.dateCreated = null;
+      this.createdAt = null;
     }
   }
 
-  public String getDateModified() {
-    return this.dateModified;
+  public String getModifiedAt() {
+    return this.modifiedAt;
   }
 
-  public TAccount setDateModified(String dateModified) {
-    this.dateModified = dateModified;
+  public TAccount setModifiedAt(String modifiedAt) {
+    this.modifiedAt = modifiedAt;
     return this;
   }
 
-  public void unsetDateModified() {
-    this.dateModified = null;
+  public void unsetModifiedAt() {
+    this.modifiedAt = null;
   }
 
-  /** Returns true if field dateModified is set (has been assigned a value) and false otherwise */
-  public boolean isSetDateModified() {
-    return this.dateModified != null;
+  /** Returns true if field modifiedAt is set (has been assigned a value) and false otherwise */
+  public boolean isSetModifiedAt() {
+    return this.modifiedAt != null;
   }
 
-  public void setDateModifiedIsSet(boolean value) {
+  public void setModifiedAtIsSet(boolean value) {
     if (!value) {
-      this.dateModified = null;
+      this.modifiedAt = null;
     }
+  }
+
+  public int getUserCreated() {
+    return this.userCreated;
+  }
+
+  public TAccount setUserCreated(int userCreated) {
+    this.userCreated = userCreated;
+    setUserCreatedIsSet(true);
+    return this;
+  }
+
+  public void unsetUserCreated() {
+    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __USERCREATED_ISSET_ID);
+  }
+
+  /** Returns true if field userCreated is set (has been assigned a value) and false otherwise */
+  public boolean isSetUserCreated() {
+    return EncodingUtils.testBit(__isset_bitfield, __USERCREATED_ISSET_ID);
+  }
+
+  public void setUserCreatedIsSet(boolean value) {
+    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __USERCREATED_ISSET_ID, value);
+  }
+
+  public int getUserModified() {
+    return this.userModified;
+  }
+
+  public TAccount setUserModified(int userModified) {
+    this.userModified = userModified;
+    setUserModifiedIsSet(true);
+    return this;
+  }
+
+  public void unsetUserModified() {
+    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __USERMODIFIED_ISSET_ID);
+  }
+
+  /** Returns true if field userModified is set (has been assigned a value) and false otherwise */
+  public boolean isSetUserModified() {
+    return EncodingUtils.testBit(__isset_bitfield, __USERMODIFIED_ISSET_ID);
+  }
+
+  public void setUserModifiedIsSet(boolean value) {
+    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __USERMODIFIED_ISSET_ID, value);
   }
 
   public void setFieldValue(_Fields field, Object value) {
@@ -926,19 +1000,35 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
       }
       break;
 
-    case DATE_CREATED:
+    case CREATED_AT:
       if (value == null) {
-        unsetDateCreated();
+        unsetCreatedAt();
       } else {
-        setDateCreated((String)value);
+        setCreatedAt((String)value);
       }
       break;
 
-    case DATE_MODIFIED:
+    case MODIFIED_AT:
       if (value == null) {
-        unsetDateModified();
+        unsetModifiedAt();
       } else {
-        setDateModified((String)value);
+        setModifiedAt((String)value);
+      }
+      break;
+
+    case USER_CREATED:
+      if (value == null) {
+        unsetUserCreated();
+      } else {
+        setUserCreated((Integer)value);
+      }
+      break;
+
+    case USER_MODIFIED:
+      if (value == null) {
+        unsetUserModified();
+      } else {
+        setUserModified((Integer)value);
       }
       break;
 
@@ -995,11 +1085,17 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
     case EXPIRE_TIME:
       return getExpireTime();
 
-    case DATE_CREATED:
-      return getDateCreated();
+    case CREATED_AT:
+      return getCreatedAt();
 
-    case DATE_MODIFIED:
-      return getDateModified();
+    case MODIFIED_AT:
+      return getModifiedAt();
+
+    case USER_CREATED:
+      return Integer.valueOf(getUserCreated());
+
+    case USER_MODIFIED:
+      return Integer.valueOf(getUserModified());
 
     }
     throw new IllegalStateException();
@@ -1044,10 +1140,14 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
       return isSetPermissionId();
     case EXPIRE_TIME:
       return isSetExpireTime();
-    case DATE_CREATED:
-      return isSetDateCreated();
-    case DATE_MODIFIED:
-      return isSetDateModified();
+    case CREATED_AT:
+      return isSetCreatedAt();
+    case MODIFIED_AT:
+      return isSetModifiedAt();
+    case USER_CREATED:
+      return isSetUserCreated();
+    case USER_MODIFIED:
+      return isSetUserModified();
     }
     throw new IllegalStateException();
   }
@@ -1209,21 +1309,39 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
         return false;
     }
 
-    boolean this_present_dateCreated = true && this.isSetDateCreated();
-    boolean that_present_dateCreated = true && that.isSetDateCreated();
-    if (this_present_dateCreated || that_present_dateCreated) {
-      if (!(this_present_dateCreated && that_present_dateCreated))
+    boolean this_present_createdAt = true && this.isSetCreatedAt();
+    boolean that_present_createdAt = true && that.isSetCreatedAt();
+    if (this_present_createdAt || that_present_createdAt) {
+      if (!(this_present_createdAt && that_present_createdAt))
         return false;
-      if (!this.dateCreated.equals(that.dateCreated))
+      if (!this.createdAt.equals(that.createdAt))
         return false;
     }
 
-    boolean this_present_dateModified = true && this.isSetDateModified();
-    boolean that_present_dateModified = true && that.isSetDateModified();
-    if (this_present_dateModified || that_present_dateModified) {
-      if (!(this_present_dateModified && that_present_dateModified))
+    boolean this_present_modifiedAt = true && this.isSetModifiedAt();
+    boolean that_present_modifiedAt = true && that.isSetModifiedAt();
+    if (this_present_modifiedAt || that_present_modifiedAt) {
+      if (!(this_present_modifiedAt && that_present_modifiedAt))
         return false;
-      if (!this.dateModified.equals(that.dateModified))
+      if (!this.modifiedAt.equals(that.modifiedAt))
+        return false;
+    }
+
+    boolean this_present_userCreated = true;
+    boolean that_present_userCreated = true;
+    if (this_present_userCreated || that_present_userCreated) {
+      if (!(this_present_userCreated && that_present_userCreated))
+        return false;
+      if (this.userCreated != that.userCreated)
+        return false;
+    }
+
+    boolean this_present_userModified = true;
+    boolean that_present_userModified = true;
+    if (this_present_userModified || that_present_userModified) {
+      if (!(this_present_userModified && that_present_userModified))
+        return false;
+      if (this.userModified != that.userModified)
         return false;
     }
 
@@ -1403,22 +1521,42 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetDateCreated()).compareTo(other.isSetDateCreated());
+    lastComparison = Boolean.valueOf(isSetCreatedAt()).compareTo(other.isSetCreatedAt());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetDateCreated()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.dateCreated, other.dateCreated);
+    if (isSetCreatedAt()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createdAt, other.createdAt);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetDateModified()).compareTo(other.isSetDateModified());
+    lastComparison = Boolean.valueOf(isSetModifiedAt()).compareTo(other.isSetModifiedAt());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetDateModified()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.dateModified, other.dateModified);
+    if (isSetModifiedAt()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.modifiedAt, other.modifiedAt);
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+    }
+    lastComparison = Boolean.valueOf(isSetUserCreated()).compareTo(other.isSetUserCreated());
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+    if (isSetUserCreated()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.userCreated, other.userCreated);
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+    }
+    lastComparison = Boolean.valueOf(isSetUserModified()).compareTo(other.isSetUserModified());
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+    if (isSetUserModified()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.userModified, other.userModified);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -1555,20 +1693,28 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
     }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("dateCreated:");
-    if (this.dateCreated == null) {
+    sb.append("createdAt:");
+    if (this.createdAt == null) {
       sb.append("null");
     } else {
-      sb.append(this.dateCreated);
+      sb.append(this.createdAt);
     }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("dateModified:");
-    if (this.dateModified == null) {
+    sb.append("modifiedAt:");
+    if (this.modifiedAt == null) {
       sb.append("null");
     } else {
-      sb.append(this.dateModified);
+      sb.append(this.modifiedAt);
     }
+    first = false;
+    if (!first) sb.append(", ");
+    sb.append("userCreated:");
+    sb.append(this.userCreated);
+    first = false;
+    if (!first) sb.append(", ");
+    sb.append("userModified:");
+    sb.append(this.userModified);
     first = false;
     sb.append(")");
     return sb.toString();
@@ -1743,18 +1889,34 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 17: // DATE_CREATED
+          case 17: // CREATED_AT
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.dateCreated = iprot.readString();
-              struct.setDateCreatedIsSet(true);
+              struct.createdAt = iprot.readString();
+              struct.setCreatedAtIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 18: // DATE_MODIFIED
+          case 18: // MODIFIED_AT
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.dateModified = iprot.readString();
-              struct.setDateModifiedIsSet(true);
+              struct.modifiedAt = iprot.readString();
+              struct.setModifiedAtIsSet(true);
+            } else { 
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+            }
+            break;
+          case 19: // USER_CREATED
+            if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+              struct.userCreated = iprot.readI32();
+              struct.setUserCreatedIsSet(true);
+            } else { 
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+            }
+            break;
+          case 20: // USER_MODIFIED
+            if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+              struct.userModified = iprot.readI32();
+              struct.setUserModifiedIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -1846,16 +2008,22 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
         oprot.writeString(struct.expireTime);
         oprot.writeFieldEnd();
       }
-      if (struct.dateCreated != null) {
-        oprot.writeFieldBegin(DATE_CREATED_FIELD_DESC);
-        oprot.writeString(struct.dateCreated);
+      if (struct.createdAt != null) {
+        oprot.writeFieldBegin(CREATED_AT_FIELD_DESC);
+        oprot.writeString(struct.createdAt);
         oprot.writeFieldEnd();
       }
-      if (struct.dateModified != null) {
-        oprot.writeFieldBegin(DATE_MODIFIED_FIELD_DESC);
-        oprot.writeString(struct.dateModified);
+      if (struct.modifiedAt != null) {
+        oprot.writeFieldBegin(MODIFIED_AT_FIELD_DESC);
+        oprot.writeString(struct.modifiedAt);
         oprot.writeFieldEnd();
       }
+      oprot.writeFieldBegin(USER_CREATED_FIELD_DESC);
+      oprot.writeI32(struct.userCreated);
+      oprot.writeFieldEnd();
+      oprot.writeFieldBegin(USER_MODIFIED_FIELD_DESC);
+      oprot.writeI32(struct.userModified);
+      oprot.writeFieldEnd();
       oprot.writeFieldStop();
       oprot.writeStructEnd();
     }
@@ -1922,13 +2090,19 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
       if (struct.isSetExpireTime()) {
         optionals.set(15);
       }
-      if (struct.isSetDateCreated()) {
+      if (struct.isSetCreatedAt()) {
         optionals.set(16);
       }
-      if (struct.isSetDateModified()) {
+      if (struct.isSetModifiedAt()) {
         optionals.set(17);
       }
-      oprot.writeBitSet(optionals, 18);
+      if (struct.isSetUserCreated()) {
+        optionals.set(18);
+      }
+      if (struct.isSetUserModified()) {
+        optionals.set(19);
+      }
+      oprot.writeBitSet(optionals, 20);
       if (struct.isSetId()) {
         oprot.writeI32(struct.id);
       }
@@ -1977,18 +2151,24 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
       if (struct.isSetExpireTime()) {
         oprot.writeString(struct.expireTime);
       }
-      if (struct.isSetDateCreated()) {
-        oprot.writeString(struct.dateCreated);
+      if (struct.isSetCreatedAt()) {
+        oprot.writeString(struct.createdAt);
       }
-      if (struct.isSetDateModified()) {
-        oprot.writeString(struct.dateModified);
+      if (struct.isSetModifiedAt()) {
+        oprot.writeString(struct.modifiedAt);
+      }
+      if (struct.isSetUserCreated()) {
+        oprot.writeI32(struct.userCreated);
+      }
+      if (struct.isSetUserModified()) {
+        oprot.writeI32(struct.userModified);
       }
     }
 
     @Override
     public void read(org.apache.thrift.protocol.TProtocol prot, TAccount struct) throws org.apache.thrift.TException {
       TTupleProtocol iprot = (TTupleProtocol) prot;
-      BitSet incoming = iprot.readBitSet(18);
+      BitSet incoming = iprot.readBitSet(20);
       if (incoming.get(0)) {
         struct.id = iprot.readI32();
         struct.setIdIsSet(true);
@@ -2054,12 +2234,20 @@ public class TAccount implements org.apache.thrift.TBase<TAccount, TAccount._Fie
         struct.setExpireTimeIsSet(true);
       }
       if (incoming.get(16)) {
-        struct.dateCreated = iprot.readString();
-        struct.setDateCreatedIsSet(true);
+        struct.createdAt = iprot.readString();
+        struct.setCreatedAtIsSet(true);
       }
       if (incoming.get(17)) {
-        struct.dateModified = iprot.readString();
-        struct.setDateModifiedIsSet(true);
+        struct.modifiedAt = iprot.readString();
+        struct.setModifiedAtIsSet(true);
+      }
+      if (incoming.get(18)) {
+        struct.userCreated = iprot.readI32();
+        struct.setUserCreatedIsSet(true);
+      }
+      if (incoming.get(19)) {
+        struct.userModified = iprot.readI32();
+        struct.setUserModifiedIsSet(true);
       }
     }
   }

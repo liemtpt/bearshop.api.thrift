@@ -38,8 +38,8 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
   private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
   private static final org.apache.thrift.protocol.TField NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("name", org.apache.thrift.protocol.TType.STRING, (short)2);
   private static final org.apache.thrift.protocol.TField DESCRIPTION_FIELD_DESC = new org.apache.thrift.protocol.TField("description", org.apache.thrift.protocol.TType.STRING, (short)3);
-  private static final org.apache.thrift.protocol.TField DATE_CREATED_FIELD_DESC = new org.apache.thrift.protocol.TField("dateCreated", org.apache.thrift.protocol.TType.STRING, (short)4);
-  private static final org.apache.thrift.protocol.TField DATE_MODIFIED_FIELD_DESC = new org.apache.thrift.protocol.TField("dateModified", org.apache.thrift.protocol.TType.STRING, (short)5);
+  private static final org.apache.thrift.protocol.TField CREATED_AT_FIELD_DESC = new org.apache.thrift.protocol.TField("createdAt", org.apache.thrift.protocol.TType.STRING, (short)4);
+  private static final org.apache.thrift.protocol.TField MODIFIED_AT_FIELD_DESC = new org.apache.thrift.protocol.TField("modifiedAt", org.apache.thrift.protocol.TType.STRING, (short)5);
 
   private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
   static {
@@ -50,16 +50,16 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
   public int id; // required
   public String name; // required
   public String description; // required
-  public String dateCreated; // required
-  public String dateModified; // required
+  public String createdAt; // required
+  public String modifiedAt; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     ID((short)1, "id"),
     NAME((short)2, "name"),
     DESCRIPTION((short)3, "description"),
-    DATE_CREATED((short)4, "dateCreated"),
-    DATE_MODIFIED((short)5, "dateModified");
+    CREATED_AT((short)4, "createdAt"),
+    MODIFIED_AT((short)5, "modifiedAt");
 
     private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
 
@@ -80,10 +80,10 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
           return NAME;
         case 3: // DESCRIPTION
           return DESCRIPTION;
-        case 4: // DATE_CREATED
-          return DATE_CREATED;
-        case 5: // DATE_MODIFIED
-          return DATE_MODIFIED;
+        case 4: // CREATED_AT
+          return CREATED_AT;
+        case 5: // MODIFIED_AT
+          return MODIFIED_AT;
         default:
           return null;
       }
@@ -135,9 +135,9 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     tmpMap.put(_Fields.DESCRIPTION, new org.apache.thrift.meta_data.FieldMetaData("description", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.DATE_CREATED, new org.apache.thrift.meta_data.FieldMetaData("dateCreated", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.CREATED_AT, new org.apache.thrift.meta_data.FieldMetaData("createdAt", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.DATE_MODIFIED, new org.apache.thrift.meta_data.FieldMetaData("dateModified", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.MODIFIED_AT, new org.apache.thrift.meta_data.FieldMetaData("modifiedAt", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
     org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(TPermission.class, metaDataMap);
@@ -150,16 +150,16 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
     int id,
     String name,
     String description,
-    String dateCreated,
-    String dateModified)
+    String createdAt,
+    String modifiedAt)
   {
     this();
     this.id = id;
     setIdIsSet(true);
     this.name = name;
     this.description = description;
-    this.dateCreated = dateCreated;
-    this.dateModified = dateModified;
+    this.createdAt = createdAt;
+    this.modifiedAt = modifiedAt;
   }
 
   /**
@@ -174,11 +174,11 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
     if (other.isSetDescription()) {
       this.description = other.description;
     }
-    if (other.isSetDateCreated()) {
-      this.dateCreated = other.dateCreated;
+    if (other.isSetCreatedAt()) {
+      this.createdAt = other.createdAt;
     }
-    if (other.isSetDateModified()) {
-      this.dateModified = other.dateModified;
+    if (other.isSetModifiedAt()) {
+      this.modifiedAt = other.modifiedAt;
     }
   }
 
@@ -192,8 +192,8 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
     this.id = 0;
     this.name = null;
     this.description = null;
-    this.dateCreated = null;
-    this.dateModified = null;
+    this.createdAt = null;
+    this.modifiedAt = null;
   }
 
   public int getId() {
@@ -267,51 +267,51 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
     }
   }
 
-  public String getDateCreated() {
-    return this.dateCreated;
+  public String getCreatedAt() {
+    return this.createdAt;
   }
 
-  public TPermission setDateCreated(String dateCreated) {
-    this.dateCreated = dateCreated;
+  public TPermission setCreatedAt(String createdAt) {
+    this.createdAt = createdAt;
     return this;
   }
 
-  public void unsetDateCreated() {
-    this.dateCreated = null;
+  public void unsetCreatedAt() {
+    this.createdAt = null;
   }
 
-  /** Returns true if field dateCreated is set (has been assigned a value) and false otherwise */
-  public boolean isSetDateCreated() {
-    return this.dateCreated != null;
+  /** Returns true if field createdAt is set (has been assigned a value) and false otherwise */
+  public boolean isSetCreatedAt() {
+    return this.createdAt != null;
   }
 
-  public void setDateCreatedIsSet(boolean value) {
+  public void setCreatedAtIsSet(boolean value) {
     if (!value) {
-      this.dateCreated = null;
+      this.createdAt = null;
     }
   }
 
-  public String getDateModified() {
-    return this.dateModified;
+  public String getModifiedAt() {
+    return this.modifiedAt;
   }
 
-  public TPermission setDateModified(String dateModified) {
-    this.dateModified = dateModified;
+  public TPermission setModifiedAt(String modifiedAt) {
+    this.modifiedAt = modifiedAt;
     return this;
   }
 
-  public void unsetDateModified() {
-    this.dateModified = null;
+  public void unsetModifiedAt() {
+    this.modifiedAt = null;
   }
 
-  /** Returns true if field dateModified is set (has been assigned a value) and false otherwise */
-  public boolean isSetDateModified() {
-    return this.dateModified != null;
+  /** Returns true if field modifiedAt is set (has been assigned a value) and false otherwise */
+  public boolean isSetModifiedAt() {
+    return this.modifiedAt != null;
   }
 
-  public void setDateModifiedIsSet(boolean value) {
+  public void setModifiedAtIsSet(boolean value) {
     if (!value) {
-      this.dateModified = null;
+      this.modifiedAt = null;
     }
   }
 
@@ -341,19 +341,19 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
       }
       break;
 
-    case DATE_CREATED:
+    case CREATED_AT:
       if (value == null) {
-        unsetDateCreated();
+        unsetCreatedAt();
       } else {
-        setDateCreated((String)value);
+        setCreatedAt((String)value);
       }
       break;
 
-    case DATE_MODIFIED:
+    case MODIFIED_AT:
       if (value == null) {
-        unsetDateModified();
+        unsetModifiedAt();
       } else {
-        setDateModified((String)value);
+        setModifiedAt((String)value);
       }
       break;
 
@@ -371,11 +371,11 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
     case DESCRIPTION:
       return getDescription();
 
-    case DATE_CREATED:
-      return getDateCreated();
+    case CREATED_AT:
+      return getCreatedAt();
 
-    case DATE_MODIFIED:
-      return getDateModified();
+    case MODIFIED_AT:
+      return getModifiedAt();
 
     }
     throw new IllegalStateException();
@@ -394,10 +394,10 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
       return isSetName();
     case DESCRIPTION:
       return isSetDescription();
-    case DATE_CREATED:
-      return isSetDateCreated();
-    case DATE_MODIFIED:
-      return isSetDateModified();
+    case CREATED_AT:
+      return isSetCreatedAt();
+    case MODIFIED_AT:
+      return isSetModifiedAt();
     }
     throw new IllegalStateException();
   }
@@ -442,21 +442,21 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
         return false;
     }
 
-    boolean this_present_dateCreated = true && this.isSetDateCreated();
-    boolean that_present_dateCreated = true && that.isSetDateCreated();
-    if (this_present_dateCreated || that_present_dateCreated) {
-      if (!(this_present_dateCreated && that_present_dateCreated))
+    boolean this_present_createdAt = true && this.isSetCreatedAt();
+    boolean that_present_createdAt = true && that.isSetCreatedAt();
+    if (this_present_createdAt || that_present_createdAt) {
+      if (!(this_present_createdAt && that_present_createdAt))
         return false;
-      if (!this.dateCreated.equals(that.dateCreated))
+      if (!this.createdAt.equals(that.createdAt))
         return false;
     }
 
-    boolean this_present_dateModified = true && this.isSetDateModified();
-    boolean that_present_dateModified = true && that.isSetDateModified();
-    if (this_present_dateModified || that_present_dateModified) {
-      if (!(this_present_dateModified && that_present_dateModified))
+    boolean this_present_modifiedAt = true && this.isSetModifiedAt();
+    boolean that_present_modifiedAt = true && that.isSetModifiedAt();
+    if (this_present_modifiedAt || that_present_modifiedAt) {
+      if (!(this_present_modifiedAt && that_present_modifiedAt))
         return false;
-      if (!this.dateModified.equals(that.dateModified))
+      if (!this.modifiedAt.equals(that.modifiedAt))
         return false;
     }
 
@@ -506,22 +506,22 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetDateCreated()).compareTo(other.isSetDateCreated());
+    lastComparison = Boolean.valueOf(isSetCreatedAt()).compareTo(other.isSetCreatedAt());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetDateCreated()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.dateCreated, other.dateCreated);
+    if (isSetCreatedAt()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createdAt, other.createdAt);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetDateModified()).compareTo(other.isSetDateModified());
+    lastComparison = Boolean.valueOf(isSetModifiedAt()).compareTo(other.isSetModifiedAt());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetDateModified()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.dateModified, other.dateModified);
+    if (isSetModifiedAt()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.modifiedAt, other.modifiedAt);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -566,19 +566,19 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
     }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("dateCreated:");
-    if (this.dateCreated == null) {
+    sb.append("createdAt:");
+    if (this.createdAt == null) {
       sb.append("null");
     } else {
-      sb.append(this.dateCreated);
+      sb.append(this.createdAt);
     }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("dateModified:");
-    if (this.dateModified == null) {
+    sb.append("modifiedAt:");
+    if (this.modifiedAt == null) {
       sb.append("null");
     } else {
-      sb.append(this.dateModified);
+      sb.append(this.modifiedAt);
     }
     first = false;
     sb.append(")");
@@ -650,18 +650,18 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 4: // DATE_CREATED
+          case 4: // CREATED_AT
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.dateCreated = iprot.readString();
-              struct.setDateCreatedIsSet(true);
+              struct.createdAt = iprot.readString();
+              struct.setCreatedAtIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 5: // DATE_MODIFIED
+          case 5: // MODIFIED_AT
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.dateModified = iprot.readString();
-              struct.setDateModifiedIsSet(true);
+              struct.modifiedAt = iprot.readString();
+              struct.setModifiedAtIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -694,14 +694,14 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
         oprot.writeString(struct.description);
         oprot.writeFieldEnd();
       }
-      if (struct.dateCreated != null) {
-        oprot.writeFieldBegin(DATE_CREATED_FIELD_DESC);
-        oprot.writeString(struct.dateCreated);
+      if (struct.createdAt != null) {
+        oprot.writeFieldBegin(CREATED_AT_FIELD_DESC);
+        oprot.writeString(struct.createdAt);
         oprot.writeFieldEnd();
       }
-      if (struct.dateModified != null) {
-        oprot.writeFieldBegin(DATE_MODIFIED_FIELD_DESC);
-        oprot.writeString(struct.dateModified);
+      if (struct.modifiedAt != null) {
+        oprot.writeFieldBegin(MODIFIED_AT_FIELD_DESC);
+        oprot.writeString(struct.modifiedAt);
         oprot.writeFieldEnd();
       }
       oprot.writeFieldStop();
@@ -731,10 +731,10 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
       if (struct.isSetDescription()) {
         optionals.set(2);
       }
-      if (struct.isSetDateCreated()) {
+      if (struct.isSetCreatedAt()) {
         optionals.set(3);
       }
-      if (struct.isSetDateModified()) {
+      if (struct.isSetModifiedAt()) {
         optionals.set(4);
       }
       oprot.writeBitSet(optionals, 5);
@@ -747,11 +747,11 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
       if (struct.isSetDescription()) {
         oprot.writeString(struct.description);
       }
-      if (struct.isSetDateCreated()) {
-        oprot.writeString(struct.dateCreated);
+      if (struct.isSetCreatedAt()) {
+        oprot.writeString(struct.createdAt);
       }
-      if (struct.isSetDateModified()) {
-        oprot.writeString(struct.dateModified);
+      if (struct.isSetModifiedAt()) {
+        oprot.writeString(struct.modifiedAt);
       }
     }
 
@@ -772,12 +772,12 @@ public class TPermission implements org.apache.thrift.TBase<TPermission, TPermis
         struct.setDescriptionIsSet(true);
       }
       if (incoming.get(3)) {
-        struct.dateCreated = iprot.readString();
-        struct.setDateCreatedIsSet(true);
+        struct.createdAt = iprot.readString();
+        struct.setCreatedAtIsSet(true);
       }
       if (incoming.get(4)) {
-        struct.dateModified = iprot.readString();
-        struct.setDateModifiedIsSet(true);
+        struct.modifiedAt = iprot.readString();
+        struct.setModifiedAtIsSet(true);
       }
     }
   }

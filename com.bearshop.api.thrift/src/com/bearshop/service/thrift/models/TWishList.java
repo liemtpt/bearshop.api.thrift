@@ -36,7 +36,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
   private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("TWishList");
 
   private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I32, (short)1);
-  private static final org.apache.thrift.protocol.TField PRODUCT_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("product_id", org.apache.thrift.protocol.TType.I32, (short)2);
+  private static final org.apache.thrift.protocol.TField PRODUCT_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("productId", org.apache.thrift.protocol.TType.I32, (short)2);
   private static final org.apache.thrift.protocol.TField COLORS_FIELD_DESC = new org.apache.thrift.protocol.TField("colors", org.apache.thrift.protocol.TType.STRING, (short)3);
   private static final org.apache.thrift.protocol.TField SIZES_FIELD_DESC = new org.apache.thrift.protocol.TField("sizes", org.apache.thrift.protocol.TType.STRING, (short)4);
   private static final org.apache.thrift.protocol.TField QUANTITY_FIELD_DESC = new org.apache.thrift.protocol.TField("quantity", org.apache.thrift.protocol.TType.I32, (short)5);
@@ -52,7 +52,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
   }
 
   public int id; // required
-  public int product_id; // required
+  public int productId; // required
   public String colors; // required
   public String sizes; // required
   public int quantity; // required
@@ -64,7 +64,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     ID((short)1, "id"),
-    PRODUCT_ID((short)2, "product_id"),
+    PRODUCT_ID((short)2, "productId"),
     COLORS((short)3, "colors"),
     SIZES((short)4, "sizes"),
     QUANTITY((short)5, "quantity"),
@@ -145,7 +145,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
 
   // isset id assignments
   private static final int __ID_ISSET_ID = 0;
-  private static final int __PRODUCT_ID_ISSET_ID = 1;
+  private static final int __PRODUCTID_ISSET_ID = 1;
   private static final int __QUANTITY_ISSET_ID = 2;
   private static final int __USERCREATED_ISSET_ID = 3;
   private static final int __USERMODIFIED_ISSET_ID = 4;
@@ -155,7 +155,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
     Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
     tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.PRODUCT_ID, new org.apache.thrift.meta_data.FieldMetaData("product_id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.PRODUCT_ID, new org.apache.thrift.meta_data.FieldMetaData("productId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
     tmpMap.put(_Fields.COLORS, new org.apache.thrift.meta_data.FieldMetaData("colors", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
@@ -180,7 +180,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
 
   public TWishList(
     int id,
-    int product_id,
+    int productId,
     String colors,
     String sizes,
     int quantity,
@@ -192,8 +192,8 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
     this();
     this.id = id;
     setIdIsSet(true);
-    this.product_id = product_id;
-    setProduct_idIsSet(true);
+    this.productId = productId;
+    setProductIdIsSet(true);
     this.colors = colors;
     this.sizes = sizes;
     this.quantity = quantity;
@@ -212,7 +212,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
   public TWishList(TWishList other) {
     __isset_bitfield = other.__isset_bitfield;
     this.id = other.id;
-    this.product_id = other.product_id;
+    this.productId = other.productId;
     if (other.isSetColors()) {
       this.colors = other.colors;
     }
@@ -238,8 +238,8 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
   public void clear() {
     setIdIsSet(false);
     this.id = 0;
-    setProduct_idIsSet(false);
-    this.product_id = 0;
+    setProductIdIsSet(false);
+    this.productId = 0;
     this.colors = null;
     this.sizes = null;
     setQuantityIsSet(false);
@@ -275,27 +275,27 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
     __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
   }
 
-  public int getProduct_id() {
-    return this.product_id;
+  public int getProductId() {
+    return this.productId;
   }
 
-  public TWishList setProduct_id(int product_id) {
-    this.product_id = product_id;
-    setProduct_idIsSet(true);
+  public TWishList setProductId(int productId) {
+    this.productId = productId;
+    setProductIdIsSet(true);
     return this;
   }
 
-  public void unsetProduct_id() {
-    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __PRODUCT_ID_ISSET_ID);
+  public void unsetProductId() {
+    __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __PRODUCTID_ISSET_ID);
   }
 
-  /** Returns true if field product_id is set (has been assigned a value) and false otherwise */
-  public boolean isSetProduct_id() {
-    return EncodingUtils.testBit(__isset_bitfield, __PRODUCT_ID_ISSET_ID);
+  /** Returns true if field productId is set (has been assigned a value) and false otherwise */
+  public boolean isSetProductId() {
+    return EncodingUtils.testBit(__isset_bitfield, __PRODUCTID_ISSET_ID);
   }
 
-  public void setProduct_idIsSet(boolean value) {
-    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __PRODUCT_ID_ISSET_ID, value);
+  public void setProductIdIsSet(boolean value) {
+    __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __PRODUCTID_ISSET_ID, value);
   }
 
   public String getColors() {
@@ -475,9 +475,9 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
 
     case PRODUCT_ID:
       if (value == null) {
-        unsetProduct_id();
+        unsetProductId();
       } else {
-        setProduct_id((Integer)value);
+        setProductId((Integer)value);
       }
       break;
 
@@ -546,7 +546,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
       return Integer.valueOf(getId());
 
     case PRODUCT_ID:
-      return Integer.valueOf(getProduct_id());
+      return Integer.valueOf(getProductId());
 
     case COLORS:
       return getColors();
@@ -583,7 +583,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
     case ID:
       return isSetId();
     case PRODUCT_ID:
-      return isSetProduct_id();
+      return isSetProductId();
     case COLORS:
       return isSetColors();
     case SIZES:
@@ -624,12 +624,12 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
         return false;
     }
 
-    boolean this_present_product_id = true;
-    boolean that_present_product_id = true;
-    if (this_present_product_id || that_present_product_id) {
-      if (!(this_present_product_id && that_present_product_id))
+    boolean this_present_productId = true;
+    boolean that_present_productId = true;
+    if (this_present_productId || that_present_productId) {
+      if (!(this_present_productId && that_present_productId))
         return false;
-      if (this.product_id != that.product_id)
+      if (this.productId != that.productId)
         return false;
     }
 
@@ -722,12 +722,12 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetProduct_id()).compareTo(other.isSetProduct_id());
+    lastComparison = Boolean.valueOf(isSetProductId()).compareTo(other.isSetProductId());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetProduct_id()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.product_id, other.product_id);
+    if (isSetProductId()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.productId, other.productId);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -826,8 +826,8 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
     sb.append(this.id);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("product_id:");
-    sb.append(this.product_id);
+    sb.append("productId:");
+    sb.append(this.productId);
     first = false;
     if (!first) sb.append(", ");
     sb.append("colors:");
@@ -928,8 +928,8 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
             break;
           case 2: // PRODUCT_ID
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-              struct.product_id = iprot.readI32();
-              struct.setProduct_idIsSet(true);
+              struct.productId = iprot.readI32();
+              struct.setProductIdIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -1009,7 +1009,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
       oprot.writeI32(struct.id);
       oprot.writeFieldEnd();
       oprot.writeFieldBegin(PRODUCT_ID_FIELD_DESC);
-      oprot.writeI32(struct.product_id);
+      oprot.writeI32(struct.productId);
       oprot.writeFieldEnd();
       if (struct.colors != null) {
         oprot.writeFieldBegin(COLORS_FIELD_DESC);
@@ -1061,7 +1061,7 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
       if (struct.isSetId()) {
         optionals.set(0);
       }
-      if (struct.isSetProduct_id()) {
+      if (struct.isSetProductId()) {
         optionals.set(1);
       }
       if (struct.isSetColors()) {
@@ -1089,8 +1089,8 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
       if (struct.isSetId()) {
         oprot.writeI32(struct.id);
       }
-      if (struct.isSetProduct_id()) {
-        oprot.writeI32(struct.product_id);
+      if (struct.isSetProductId()) {
+        oprot.writeI32(struct.productId);
       }
       if (struct.isSetColors()) {
         oprot.writeString(struct.colors);
@@ -1124,8 +1124,8 @@ public class TWishList implements org.apache.thrift.TBase<TWishList, TWishList._
         struct.setIdIsSet(true);
       }
       if (incoming.get(1)) {
-        struct.product_id = iprot.readI32();
-        struct.setProduct_idIsSet(true);
+        struct.productId = iprot.readI32();
+        struct.setProductIdIsSet(true);
       }
       if (incoming.get(2)) {
         struct.colors = iprot.readString();

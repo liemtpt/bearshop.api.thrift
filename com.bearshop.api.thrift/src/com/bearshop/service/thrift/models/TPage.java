@@ -39,10 +39,10 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
   private static final org.apache.thrift.protocol.TField PARENT_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("parentId", org.apache.thrift.protocol.TType.I32, (short)2);
   private static final org.apache.thrift.protocol.TField NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("name", org.apache.thrift.protocol.TType.STRING, (short)3);
   private static final org.apache.thrift.protocol.TField LINK_FIELD_DESC = new org.apache.thrift.protocol.TField("link", org.apache.thrift.protocol.TType.STRING, (short)4);
-  private static final org.apache.thrift.protocol.TField LINK_ALIAS_FIELD_DESC = new org.apache.thrift.protocol.TField("linkAlias", org.apache.thrift.protocol.TType.STRING, (short)5);
+  private static final org.apache.thrift.protocol.TField ALIAS_PAGE_FIELD_DESC = new org.apache.thrift.protocol.TField("aliasPage", org.apache.thrift.protocol.TType.STRING, (short)5);
   private static final org.apache.thrift.protocol.TField ORDERING_FIELD_DESC = new org.apache.thrift.protocol.TField("ordering", org.apache.thrift.protocol.TType.I32, (short)6);
-  private static final org.apache.thrift.protocol.TField DATE_CREATED_FIELD_DESC = new org.apache.thrift.protocol.TField("dateCreated", org.apache.thrift.protocol.TType.STRING, (short)7);
-  private static final org.apache.thrift.protocol.TField DATE_MODIFIED_FIELD_DESC = new org.apache.thrift.protocol.TField("dateModified", org.apache.thrift.protocol.TType.STRING, (short)8);
+  private static final org.apache.thrift.protocol.TField CREATED_AT_FIELD_DESC = new org.apache.thrift.protocol.TField("createdAt", org.apache.thrift.protocol.TType.STRING, (short)7);
+  private static final org.apache.thrift.protocol.TField MODIFIED_AT_FIELD_DESC = new org.apache.thrift.protocol.TField("modifiedAt", org.apache.thrift.protocol.TType.STRING, (short)8);
 
   private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
   static {
@@ -54,10 +54,10 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
   public int parentId; // required
   public String name; // required
   public String link; // required
-  public String linkAlias; // required
+  public String aliasPage; // required
   public int ordering; // required
-  public String dateCreated; // required
-  public String dateModified; // required
+  public String createdAt; // required
+  public String modifiedAt; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -65,10 +65,10 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     PARENT_ID((short)2, "parentId"),
     NAME((short)3, "name"),
     LINK((short)4, "link"),
-    LINK_ALIAS((short)5, "linkAlias"),
+    ALIAS_PAGE((short)5, "aliasPage"),
     ORDERING((short)6, "ordering"),
-    DATE_CREATED((short)7, "dateCreated"),
-    DATE_MODIFIED((short)8, "dateModified");
+    CREATED_AT((short)7, "createdAt"),
+    MODIFIED_AT((short)8, "modifiedAt");
 
     private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
 
@@ -91,14 +91,14 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
           return NAME;
         case 4: // LINK
           return LINK;
-        case 5: // LINK_ALIAS
-          return LINK_ALIAS;
+        case 5: // ALIAS_PAGE
+          return ALIAS_PAGE;
         case 6: // ORDERING
           return ORDERING;
-        case 7: // DATE_CREATED
-          return DATE_CREATED;
-        case 8: // DATE_MODIFIED
-          return DATE_MODIFIED;
+        case 7: // CREATED_AT
+          return CREATED_AT;
+        case 8: // MODIFIED_AT
+          return MODIFIED_AT;
         default:
           return null;
       }
@@ -154,13 +154,13 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     tmpMap.put(_Fields.LINK, new org.apache.thrift.meta_data.FieldMetaData("link", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.LINK_ALIAS, new org.apache.thrift.meta_data.FieldMetaData("linkAlias", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.ALIAS_PAGE, new org.apache.thrift.meta_data.FieldMetaData("aliasPage", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     tmpMap.put(_Fields.ORDERING, new org.apache.thrift.meta_data.FieldMetaData("ordering", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.DATE_CREATED, new org.apache.thrift.meta_data.FieldMetaData("dateCreated", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.CREATED_AT, new org.apache.thrift.meta_data.FieldMetaData("createdAt", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.DATE_MODIFIED, new org.apache.thrift.meta_data.FieldMetaData("dateModified", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+    tmpMap.put(_Fields.MODIFIED_AT, new org.apache.thrift.meta_data.FieldMetaData("modifiedAt", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
     org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(TPage.class, metaDataMap);
@@ -174,10 +174,10 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     int parentId,
     String name,
     String link,
-    String linkAlias,
+    String aliasPage,
     int ordering,
-    String dateCreated,
-    String dateModified)
+    String createdAt,
+    String modifiedAt)
   {
     this();
     this.id = id;
@@ -186,11 +186,11 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     setParentIdIsSet(true);
     this.name = name;
     this.link = link;
-    this.linkAlias = linkAlias;
+    this.aliasPage = aliasPage;
     this.ordering = ordering;
     setOrderingIsSet(true);
-    this.dateCreated = dateCreated;
-    this.dateModified = dateModified;
+    this.createdAt = createdAt;
+    this.modifiedAt = modifiedAt;
   }
 
   /**
@@ -206,15 +206,15 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     if (other.isSetLink()) {
       this.link = other.link;
     }
-    if (other.isSetLinkAlias()) {
-      this.linkAlias = other.linkAlias;
+    if (other.isSetAliasPage()) {
+      this.aliasPage = other.aliasPage;
     }
     this.ordering = other.ordering;
-    if (other.isSetDateCreated()) {
-      this.dateCreated = other.dateCreated;
+    if (other.isSetCreatedAt()) {
+      this.createdAt = other.createdAt;
     }
-    if (other.isSetDateModified()) {
-      this.dateModified = other.dateModified;
+    if (other.isSetModifiedAt()) {
+      this.modifiedAt = other.modifiedAt;
     }
   }
 
@@ -230,11 +230,11 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     this.parentId = 0;
     this.name = null;
     this.link = null;
-    this.linkAlias = null;
+    this.aliasPage = null;
     setOrderingIsSet(false);
     this.ordering = 0;
-    this.dateCreated = null;
-    this.dateModified = null;
+    this.createdAt = null;
+    this.modifiedAt = null;
   }
 
   public int getId() {
@@ -331,27 +331,27 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     }
   }
 
-  public String getLinkAlias() {
-    return this.linkAlias;
+  public String getAliasPage() {
+    return this.aliasPage;
   }
 
-  public TPage setLinkAlias(String linkAlias) {
-    this.linkAlias = linkAlias;
+  public TPage setAliasPage(String aliasPage) {
+    this.aliasPage = aliasPage;
     return this;
   }
 
-  public void unsetLinkAlias() {
-    this.linkAlias = null;
+  public void unsetAliasPage() {
+    this.aliasPage = null;
   }
 
-  /** Returns true if field linkAlias is set (has been assigned a value) and false otherwise */
-  public boolean isSetLinkAlias() {
-    return this.linkAlias != null;
+  /** Returns true if field aliasPage is set (has been assigned a value) and false otherwise */
+  public boolean isSetAliasPage() {
+    return this.aliasPage != null;
   }
 
-  public void setLinkAliasIsSet(boolean value) {
+  public void setAliasPageIsSet(boolean value) {
     if (!value) {
-      this.linkAlias = null;
+      this.aliasPage = null;
     }
   }
 
@@ -378,51 +378,51 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __ORDERING_ISSET_ID, value);
   }
 
-  public String getDateCreated() {
-    return this.dateCreated;
+  public String getCreatedAt() {
+    return this.createdAt;
   }
 
-  public TPage setDateCreated(String dateCreated) {
-    this.dateCreated = dateCreated;
+  public TPage setCreatedAt(String createdAt) {
+    this.createdAt = createdAt;
     return this;
   }
 
-  public void unsetDateCreated() {
-    this.dateCreated = null;
+  public void unsetCreatedAt() {
+    this.createdAt = null;
   }
 
-  /** Returns true if field dateCreated is set (has been assigned a value) and false otherwise */
-  public boolean isSetDateCreated() {
-    return this.dateCreated != null;
+  /** Returns true if field createdAt is set (has been assigned a value) and false otherwise */
+  public boolean isSetCreatedAt() {
+    return this.createdAt != null;
   }
 
-  public void setDateCreatedIsSet(boolean value) {
+  public void setCreatedAtIsSet(boolean value) {
     if (!value) {
-      this.dateCreated = null;
+      this.createdAt = null;
     }
   }
 
-  public String getDateModified() {
-    return this.dateModified;
+  public String getModifiedAt() {
+    return this.modifiedAt;
   }
 
-  public TPage setDateModified(String dateModified) {
-    this.dateModified = dateModified;
+  public TPage setModifiedAt(String modifiedAt) {
+    this.modifiedAt = modifiedAt;
     return this;
   }
 
-  public void unsetDateModified() {
-    this.dateModified = null;
+  public void unsetModifiedAt() {
+    this.modifiedAt = null;
   }
 
-  /** Returns true if field dateModified is set (has been assigned a value) and false otherwise */
-  public boolean isSetDateModified() {
-    return this.dateModified != null;
+  /** Returns true if field modifiedAt is set (has been assigned a value) and false otherwise */
+  public boolean isSetModifiedAt() {
+    return this.modifiedAt != null;
   }
 
-  public void setDateModifiedIsSet(boolean value) {
+  public void setModifiedAtIsSet(boolean value) {
     if (!value) {
-      this.dateModified = null;
+      this.modifiedAt = null;
     }
   }
 
@@ -460,11 +460,11 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
       }
       break;
 
-    case LINK_ALIAS:
+    case ALIAS_PAGE:
       if (value == null) {
-        unsetLinkAlias();
+        unsetAliasPage();
       } else {
-        setLinkAlias((String)value);
+        setAliasPage((String)value);
       }
       break;
 
@@ -476,19 +476,19 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
       }
       break;
 
-    case DATE_CREATED:
+    case CREATED_AT:
       if (value == null) {
-        unsetDateCreated();
+        unsetCreatedAt();
       } else {
-        setDateCreated((String)value);
+        setCreatedAt((String)value);
       }
       break;
 
-    case DATE_MODIFIED:
+    case MODIFIED_AT:
       if (value == null) {
-        unsetDateModified();
+        unsetModifiedAt();
       } else {
-        setDateModified((String)value);
+        setModifiedAt((String)value);
       }
       break;
 
@@ -509,17 +509,17 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     case LINK:
       return getLink();
 
-    case LINK_ALIAS:
-      return getLinkAlias();
+    case ALIAS_PAGE:
+      return getAliasPage();
 
     case ORDERING:
       return Integer.valueOf(getOrdering());
 
-    case DATE_CREATED:
-      return getDateCreated();
+    case CREATED_AT:
+      return getCreatedAt();
 
-    case DATE_MODIFIED:
-      return getDateModified();
+    case MODIFIED_AT:
+      return getModifiedAt();
 
     }
     throw new IllegalStateException();
@@ -540,14 +540,14 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
       return isSetName();
     case LINK:
       return isSetLink();
-    case LINK_ALIAS:
-      return isSetLinkAlias();
+    case ALIAS_PAGE:
+      return isSetAliasPage();
     case ORDERING:
       return isSetOrdering();
-    case DATE_CREATED:
-      return isSetDateCreated();
-    case DATE_MODIFIED:
-      return isSetDateModified();
+    case CREATED_AT:
+      return isSetCreatedAt();
+    case MODIFIED_AT:
+      return isSetModifiedAt();
     }
     throw new IllegalStateException();
   }
@@ -601,12 +601,12 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
         return false;
     }
 
-    boolean this_present_linkAlias = true && this.isSetLinkAlias();
-    boolean that_present_linkAlias = true && that.isSetLinkAlias();
-    if (this_present_linkAlias || that_present_linkAlias) {
-      if (!(this_present_linkAlias && that_present_linkAlias))
+    boolean this_present_aliasPage = true && this.isSetAliasPage();
+    boolean that_present_aliasPage = true && that.isSetAliasPage();
+    if (this_present_aliasPage || that_present_aliasPage) {
+      if (!(this_present_aliasPage && that_present_aliasPage))
         return false;
-      if (!this.linkAlias.equals(that.linkAlias))
+      if (!this.aliasPage.equals(that.aliasPage))
         return false;
     }
 
@@ -619,21 +619,21 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
         return false;
     }
 
-    boolean this_present_dateCreated = true && this.isSetDateCreated();
-    boolean that_present_dateCreated = true && that.isSetDateCreated();
-    if (this_present_dateCreated || that_present_dateCreated) {
-      if (!(this_present_dateCreated && that_present_dateCreated))
+    boolean this_present_createdAt = true && this.isSetCreatedAt();
+    boolean that_present_createdAt = true && that.isSetCreatedAt();
+    if (this_present_createdAt || that_present_createdAt) {
+      if (!(this_present_createdAt && that_present_createdAt))
         return false;
-      if (!this.dateCreated.equals(that.dateCreated))
+      if (!this.createdAt.equals(that.createdAt))
         return false;
     }
 
-    boolean this_present_dateModified = true && this.isSetDateModified();
-    boolean that_present_dateModified = true && that.isSetDateModified();
-    if (this_present_dateModified || that_present_dateModified) {
-      if (!(this_present_dateModified && that_present_dateModified))
+    boolean this_present_modifiedAt = true && this.isSetModifiedAt();
+    boolean that_present_modifiedAt = true && that.isSetModifiedAt();
+    if (this_present_modifiedAt || that_present_modifiedAt) {
+      if (!(this_present_modifiedAt && that_present_modifiedAt))
         return false;
-      if (!this.dateModified.equals(that.dateModified))
+      if (!this.modifiedAt.equals(that.modifiedAt))
         return false;
     }
 
@@ -693,12 +693,12 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetLinkAlias()).compareTo(other.isSetLinkAlias());
+    lastComparison = Boolean.valueOf(isSetAliasPage()).compareTo(other.isSetAliasPage());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetLinkAlias()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.linkAlias, other.linkAlias);
+    if (isSetAliasPage()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.aliasPage, other.aliasPage);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -713,22 +713,22 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetDateCreated()).compareTo(other.isSetDateCreated());
+    lastComparison = Boolean.valueOf(isSetCreatedAt()).compareTo(other.isSetCreatedAt());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetDateCreated()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.dateCreated, other.dateCreated);
+    if (isSetCreatedAt()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createdAt, other.createdAt);
       if (lastComparison != 0) {
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetDateModified()).compareTo(other.isSetDateModified());
+    lastComparison = Boolean.valueOf(isSetModifiedAt()).compareTo(other.isSetModifiedAt());
     if (lastComparison != 0) {
       return lastComparison;
     }
-    if (isSetDateModified()) {
-      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.dateModified, other.dateModified);
+    if (isSetModifiedAt()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.modifiedAt, other.modifiedAt);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -777,11 +777,11 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("linkAlias:");
-    if (this.linkAlias == null) {
+    sb.append("aliasPage:");
+    if (this.aliasPage == null) {
       sb.append("null");
     } else {
-      sb.append(this.linkAlias);
+      sb.append(this.aliasPage);
     }
     first = false;
     if (!first) sb.append(", ");
@@ -789,19 +789,19 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
     sb.append(this.ordering);
     first = false;
     if (!first) sb.append(", ");
-    sb.append("dateCreated:");
-    if (this.dateCreated == null) {
+    sb.append("createdAt:");
+    if (this.createdAt == null) {
       sb.append("null");
     } else {
-      sb.append(this.dateCreated);
+      sb.append(this.createdAt);
     }
     first = false;
     if (!first) sb.append(", ");
-    sb.append("dateModified:");
-    if (this.dateModified == null) {
+    sb.append("modifiedAt:");
+    if (this.modifiedAt == null) {
       sb.append("null");
     } else {
-      sb.append(this.dateModified);
+      sb.append(this.modifiedAt);
     }
     first = false;
     sb.append(")");
@@ -881,10 +881,10 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 5: // LINK_ALIAS
+          case 5: // ALIAS_PAGE
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.linkAlias = iprot.readString();
-              struct.setLinkAliasIsSet(true);
+              struct.aliasPage = iprot.readString();
+              struct.setAliasPageIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -897,18 +897,18 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 7: // DATE_CREATED
+          case 7: // CREATED_AT
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.dateCreated = iprot.readString();
-              struct.setDateCreatedIsSet(true);
+              struct.createdAt = iprot.readString();
+              struct.setCreatedAtIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 8: // DATE_MODIFIED
+          case 8: // MODIFIED_AT
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-              struct.dateModified = iprot.readString();
-              struct.setDateModifiedIsSet(true);
+              struct.modifiedAt = iprot.readString();
+              struct.setModifiedAtIsSet(true);
             } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
@@ -944,22 +944,22 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
         oprot.writeString(struct.link);
         oprot.writeFieldEnd();
       }
-      if (struct.linkAlias != null) {
-        oprot.writeFieldBegin(LINK_ALIAS_FIELD_DESC);
-        oprot.writeString(struct.linkAlias);
+      if (struct.aliasPage != null) {
+        oprot.writeFieldBegin(ALIAS_PAGE_FIELD_DESC);
+        oprot.writeString(struct.aliasPage);
         oprot.writeFieldEnd();
       }
       oprot.writeFieldBegin(ORDERING_FIELD_DESC);
       oprot.writeI32(struct.ordering);
       oprot.writeFieldEnd();
-      if (struct.dateCreated != null) {
-        oprot.writeFieldBegin(DATE_CREATED_FIELD_DESC);
-        oprot.writeString(struct.dateCreated);
+      if (struct.createdAt != null) {
+        oprot.writeFieldBegin(CREATED_AT_FIELD_DESC);
+        oprot.writeString(struct.createdAt);
         oprot.writeFieldEnd();
       }
-      if (struct.dateModified != null) {
-        oprot.writeFieldBegin(DATE_MODIFIED_FIELD_DESC);
-        oprot.writeString(struct.dateModified);
+      if (struct.modifiedAt != null) {
+        oprot.writeFieldBegin(MODIFIED_AT_FIELD_DESC);
+        oprot.writeString(struct.modifiedAt);
         oprot.writeFieldEnd();
       }
       oprot.writeFieldStop();
@@ -992,16 +992,16 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
       if (struct.isSetLink()) {
         optionals.set(3);
       }
-      if (struct.isSetLinkAlias()) {
+      if (struct.isSetAliasPage()) {
         optionals.set(4);
       }
       if (struct.isSetOrdering()) {
         optionals.set(5);
       }
-      if (struct.isSetDateCreated()) {
+      if (struct.isSetCreatedAt()) {
         optionals.set(6);
       }
-      if (struct.isSetDateModified()) {
+      if (struct.isSetModifiedAt()) {
         optionals.set(7);
       }
       oprot.writeBitSet(optionals, 8);
@@ -1017,17 +1017,17 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
       if (struct.isSetLink()) {
         oprot.writeString(struct.link);
       }
-      if (struct.isSetLinkAlias()) {
-        oprot.writeString(struct.linkAlias);
+      if (struct.isSetAliasPage()) {
+        oprot.writeString(struct.aliasPage);
       }
       if (struct.isSetOrdering()) {
         oprot.writeI32(struct.ordering);
       }
-      if (struct.isSetDateCreated()) {
-        oprot.writeString(struct.dateCreated);
+      if (struct.isSetCreatedAt()) {
+        oprot.writeString(struct.createdAt);
       }
-      if (struct.isSetDateModified()) {
-        oprot.writeString(struct.dateModified);
+      if (struct.isSetModifiedAt()) {
+        oprot.writeString(struct.modifiedAt);
       }
     }
 
@@ -1052,20 +1052,20 @@ public class TPage implements org.apache.thrift.TBase<TPage, TPage._Fields>, jav
         struct.setLinkIsSet(true);
       }
       if (incoming.get(4)) {
-        struct.linkAlias = iprot.readString();
-        struct.setLinkAliasIsSet(true);
+        struct.aliasPage = iprot.readString();
+        struct.setAliasPageIsSet(true);
       }
       if (incoming.get(5)) {
         struct.ordering = iprot.readI32();
         struct.setOrderingIsSet(true);
       }
       if (incoming.get(6)) {
-        struct.dateCreated = iprot.readString();
-        struct.setDateCreatedIsSet(true);
+        struct.createdAt = iprot.readString();
+        struct.setCreatedAtIsSet(true);
       }
       if (incoming.get(7)) {
-        struct.dateModified = iprot.readString();
-        struct.setDateModifiedIsSet(true);
+        struct.modifiedAt = iprot.readString();
+        struct.setModifiedAtIsSet(true);
       }
     }
   }
